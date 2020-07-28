@@ -15,8 +15,8 @@ Node Modules:
   Express
 
 ## Screen shots
-![Employee Summary 1](./Assets/initialnote.png)
-![Employee Summary 1](./Assets/savednote.png)
+![Initial Note ](./Assets/Initialnote.png)
+![Saved Note](./Assets/savednote.png)
 
 
 
