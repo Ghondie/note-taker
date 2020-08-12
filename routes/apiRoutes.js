@@ -2,6 +2,7 @@
 //updating db.json 
 var db = require("../db/db.json")
 var ids = db.map(obj => obj.id)
+const fs = require("fs")
 
 module.exports = function (app) {
     app.get("/api/notes", function (req, res) {
@@ -9,20 +10,29 @@ module.exports = function (app) {
     })
     app.post("/api/notes", function (req, res) {
         var newid = 1
-        while (!ids.includes(newid)) {
+        while (ids.includes(newid)) {
             newid++
         }
+
         ids.push(newid)
         req.body.id = newid
         db.push(req.body)
-        res.redirect("/notes")
+        const data = JSON.stringify(db)
+        fs.writeFile('./db/db.json', data, function (err) {
+            if (err) throw err;
+            console.log('saved')
+            res.redirect("/notes")
+        })
     })
     app.delete("/api/notes/:id", function (req, res) {
         var id = req.params.id
-        note.splice(req.perams.id, 1);
-        db.push(req.body)
-        res.redirect("/notes")
-
+        db = db.filter(obj => obj.id != id);
+        const data = JSON.stringify(db);
+        fs.writeFile('./db/db.json', data, function (err) {
+            if (err) throw err;
+            console.log('saved')
+            res.json("deleted")
+        })
     })
 
 }
