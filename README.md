@@ -1,30 +1,19 @@
-# Unit 11 Express Homework: Note Taker
-
-## Description
-
-For this project I made a note taker using json objects and node.
-For usage please do a npm i to install the node modules
+# NOTE TAKER
+  For this project the objective was to make a note taker using express for the server.
+  I used "fs" to do all of the file saving
+  I used "path" for all of the pathing
 
 
-## Deployment of the application
+# SCREEN SHOTS
+![Gif](./public/assets/images/input.gif)
+![Gif](./public/assets/images/delete.gif)
 
-Please do a npm install to install the modules
-
-Node Modules:
-  FS
-  Express
-
-## Screen shots
-![Initial Note ](./Assets/Initialnote.png)
-![Saved Note](./Assets/savednote.png)
+# INSTALLATION
+  Please clone this repo 
+  Please do a npm install to install the required node modules
 
 
-
-- - -
-
-
-
-
-
+# NODE MODULES
+  express
 
 
